@@ -1,34 +1,49 @@
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, Button, Image, StyleSheet } from 'react-native';
 
 import styles from './Estilo';
 
 export default function Login({ navigation }) {
 
-    return (
+  return (
 
-        <View style={styles.container}>
+    <View style={styles.container}>
 
-            <Image
-                source={{
-                    uri: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Omnitrix_icon.png'
-                }}
-                style={styles.image}
-            />
+      <Image
+        source={{
+          uri: 'https://reactnative.dev/docs/assets/p_cat1.png'
+        }}
+        style={styles.imagem}
+      />
 
-            <Text style={styles.titulo}>HORA DO SHOW!</Text>
+      <Text style={styles.titulo}>Login</Text>
 
-           
+      <Text style={styles.label}>Digite o e-mail</Text>
 
-            
+      <TextInput
+        nativeID="email"
+        placeholder="fulano@hotmail.com"
+        style={styles.input}
+        keyboardType="email-address"
+        autoCapitalize="none"
+      />
 
-            <TouchableOpacity 
-                style={styles.botao}
-                onPress={() => navigation.navigate('Home')}
-            >
-                <Text style={styles.textoBotao}>COMEÇAR!</Text>
-            </TouchableOpacity>
+      <Text style={styles.label}>Senha</Text>
 
-        </View>
+      <TextInput
+        placeholder="Digite sua senha"
+        style={styles.input}
+        secureTextEntry={true}
+      />
 
-    );
+      <View style={styles.botao}>
+        <Button
+          title="Entrar"
+          onPress={() => navigation.navigate('Home')}
+          color="#007AFF"
+        />
+      </View>
+
+    </View>
+
+  );
 }
